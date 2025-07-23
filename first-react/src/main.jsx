@@ -8,10 +8,8 @@ createRoot(document.getElementById('root')).render(
 
 function ReasonForReact(){
   return(
-    <main>
-      <header>
-        <img src={reactLogo} width="40px"alt="react logo"></img>
-      </header>
+    <>
+      <Header></Header>
       <h1>Reasons for learning react</h1>
       <ol>
           <li>React is a popular library, so I will be able to
@@ -20,6 +18,16 @@ function ReasonForReact(){
           if I know React</li>
       </ol>
       <footer>© 2025 Vasan development. All rights reserved.</footer>
-    </main>
+    </>
+  )
+}
+
+function Header(){
+  return(
+    <>
+      <header>
+        <img src={reactLogo} width="40px"alt="react logo"></img>
+      </header>
+    </>
   )
 }
