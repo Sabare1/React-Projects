@@ -1,16 +1,12 @@
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import App from './App'
+import NavBar from './Navbar'
 
-
-createRoot(document.getElementById('root')).render(
-  <ReasonForReact></ReasonForReact>
-)
-
-function ReasonForReact(){
+function DisplayApp(){
   return(
-    <>
-      <App></App>
-    </>
-  )
+    <NavBar></NavBar>
+  );
 }
+createRoot(document.getElementById('root')).render(
+  <DisplayApp></DisplayApp>
+)
