@@ -5,10 +5,10 @@ export default function NavBar(){
         <header>
             <nav>
                 <main className="logo-container">
-                    <img src={reactLogo} alt="react logo" /><span id="logo-name">ReactFacts</span>
+                    <img src={reactLogo} alt="react logo" className="logo"/><span id="logo-name">ReactFacts</span>
                 </main>
                 <section className="facts-container">
-                    <h2>Fun facts about React</h2>
+                    <h1>Fun facts about React</h1>
                     <ul className="react-facts">
                         <li className="fact">Was first released in 2013</li>
                         <li className="fact">Was originally created by John Walke</li>

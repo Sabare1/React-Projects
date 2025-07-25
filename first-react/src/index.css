@@ -75,7 +75,7 @@ body{
 }
 
 #root{
-  min-height: 190px;
+  min-height: 300px;
   min-width: 325px;
   border: 3px solid white;
   border-radius: 10px;
@@ -83,8 +83,17 @@ body{
 }
 
 .facts-container{
-  max-width: 395px;
+  min-width: 325px;
   padding: 25px;
+  background-image: url(./assets/react-logo-half.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-color: #20232A;
+  background-size: 90px;
+}
+
+.logo{
+  width: 40px;
 }
 
 .logo-container{
@@ -97,6 +106,8 @@ body{
 #logo-name{
   margin-left: 10px;
   color: #61DBFB;
+  font-weight: 700;
+  font-size:19px;
 }
 
 .fact{
@@ -105,9 +116,9 @@ body{
 
 .fact::marker{
   color:#61DBFB;
-  font-size: 20px;
+  font-size: 25px;
 }
 
-h2{
-  font-size: 25px;
+h1{
+  
 }
