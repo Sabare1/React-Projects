@@ -67,25 +67,6 @@ button:focus-visible {
   }
 }
 
-.header{
-  display: flex;
-  align-items: center;
-}
-
-.nav-list{
-  list-style: none;
-  display: flex;
-}
-
-.items{
-  margin-left: 10px;
-  font-size: 1.1rem;
-}
-
-.items:hover{
-  cursor: pointer;
-}
-
-.react-logo{
-  width: 55px;
+body{
+  font-family: "Inter", sans-serif;
 }

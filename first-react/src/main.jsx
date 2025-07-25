@@ -1,8 +1,7 @@
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import Header from './Header'
-import MainContent from './MainContent'
-import Footer from './Footer'
+import App from './App'
+
 
 createRoot(document.getElementById('root')).render(
   <ReasonForReact></ReasonForReact>
@@ -11,9 +10,7 @@ createRoot(document.getElementById('root')).render(
 function ReasonForReact(){
   return(
     <>
-      <Header></Header>
-      <MainContent></MainContent>
-      <Footer></Footer>
+      <App></App>
     </>
   )
 }
