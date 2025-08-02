@@ -66,3 +66,30 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+#globe-icon{
+  width: 33px;
+  padding-right: 10px;
+}
+
+.main-container{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e84848;
+  padding: 13px;
+}
+
+#title-txt{
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+}
+
+header{
+  border: 4px solid white;
+  border-radius: 10px;
+  height: 625px;
+  min-width: 600px; 
+  overflow: hidden;
+  background-color: #e8e3e3;
+}
