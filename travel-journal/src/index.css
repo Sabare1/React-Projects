@@ -13,26 +13,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.place-name {
+  font-size: 2em;
+  padding: 5px;
+  margin: 2px;
 }
 
 button {
@@ -72,24 +58,55 @@ button:focus-visible {
   padding-right: 10px;
 }
 
-.main-container{
+header{
   display:flex;
   align-items: center;
   justify-content: center;
   background-color: #e84848;
-  padding: 13px;
+  padding: 10px;
 }
 
 #title-txt{
   font-weight: 400;
   font-family: "Inter", sans-serif;
+  font-size: 1rem;
 }
 
-header{
-  border: 4px solid white;
-  border-radius: 10px;
-  height: 625px;
-  min-width: 600px; 
-  overflow: hidden;
-  background-color: #e8e3e3;
+article{
+  color: black;
+}
+
+a {
+  font-weight: 400;
+  color: #8b8e94;
+}
+
+.info{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+.marker-icon{
+  width: 14px;
+  margin-right: 5px;
+}
+
+.country-name{
+  margin-right: 10px;
+  letter-spacing: 2px;
+}
+
+.travel-img{
+  height: 240px;
+  width: 190px;
+  object-fit: cover;
+  border-radius: 7px;
+  float: left;
+}
+
+.description{
+  display: flex;
+  flex-direction: column;
 }
