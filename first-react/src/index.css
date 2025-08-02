@@ -87,7 +87,7 @@ body{
   padding: 25px;
   background-image: url(./assets/react-logo-half.png);
   background-repeat: no-repeat;
-  background-position: right;
+  background-position: right 80%;
   background-color: #20232A;
   background-size: 90px;
 }
@@ -117,8 +117,4 @@ body{
 .fact::marker{
   color:#61DBFB;
   font-size: 25px;
-}
-
-h1{
-  
 }
