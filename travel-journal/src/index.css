@@ -18,7 +18,7 @@
 .place-name {
   font-size: 2em;
   padding: 5px;
-  margin: 2px;
+  margin: 0;
 }
 
 button {
@@ -73,6 +73,7 @@ header{
 }
 
 article{
+  display: flex;
   color: black;
 }
 
@@ -84,12 +85,11 @@ a {
 .info{
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-top: 5px;
+  justify-content: left;
 }
 
 .marker-icon{
-  width: 14px;
+  width: 10px;
   margin-right: 5px;
 }
 
@@ -99,8 +99,8 @@ a {
 }
 
 .travel-img{
-  height: 240px;
-  width: 190px;
+  height: 168px;
+  width: 125px;
   object-fit: cover;
   border-radius: 7px;
   float: left;
@@ -109,4 +109,26 @@ a {
 .description{
   display: flex;
   flex-direction: column;
+  text-align: left;
+  padding-left: 15px;
+  justify-content: center;
+  font-size: 10px;
+}
+
+p{
+  margin: 5px 0 0 0;
+}
+
+time{
+  font-weight: bold;
+}
+
+.entry-journal{
+  margin-top: 0;
+  padding: 65px;
+}
+
+.place-name{
+  font-size: 22px;
+  padding: 0 5px 15px 0;
 }

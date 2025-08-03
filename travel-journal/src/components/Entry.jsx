@@ -3,7 +3,7 @@ import markerLogo from '../assets/marker.png'
 
 export default function Entry(){
     return(
-        <article className='japan-section'>
+        <article className='entry-journal'>
             <img src="https://scrimba.com/links/travel-journal-japan-image-url" className='travel-img'></img>
             <div className="description">
                 <div className='info'>
