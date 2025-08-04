@@ -1,8 +1,9 @@
-export default function Joke({setup="", punch}){
+export default function Joke({setup, punch, upVotes, downVotes, comments, isPun}){
+    console.log(isPun);
     return(
         <>
-            <p>{setup}</p>
-            <p>{punch}</p>
+            {setup && <p>Setup: {setup}</p>}
+            <p>Punch: {punch}</p>
             <hr/>
         </>
     )
