@@ -1,8 +1,8 @@
 import '../index.css'
 import markerLogo from '../assets/marker.png'
 
-export default function Entry(props){
-    console.log(props);
+export default function Entry(entry){
+    const props = entry.entry;
     return(
         <article className='entry-journal'>
             <img src={props.img.src} alt={props.img.alt} className='travel-img'></img>

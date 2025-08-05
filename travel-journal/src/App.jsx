@@ -6,12 +6,8 @@ import data from './data'
 
 function App() {
   const entryInstances = data.map((place)=> <Entry
-  img = {place.img}
-  title = {place.title}
-  country = {place.country}
-  googleMapsLink = {place.googleMapsLink}
-  dates = {place.dates}
-  text = {place.text}
+  key = {place.id}
+  entry = {place}
   ></Entry>)
   return (
     <div className='container'>
