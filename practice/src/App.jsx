@@ -1,89 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from "react"
 
 export default function App() {
-  /**
-   * Challenge: see if you can remember how to grab an array of checked
-   * items from the dietaryRestrictions checkboxes.
-   */
-
-  function signUp(formData) {
-    const data = Object.fromEntries(formData);
-    const dietaryData = formData.getAll("dietaryRestrictions");
-    const allData = {
-      ...data, dietaryData
-    }
-    console.log(allData);
-    
-  }
-
-  return (
-    <section>
-      <h1>Signup form</h1>
-      <form action={signUp}>
-
-        <label htmlFor="email">Email:</label>
-        <input id="email" defaultValue="joe@schmoe.com" type="email" name="email" placeholder="joe@schmoe.com" />
-
-        <label htmlFor="password">Password:</label>
-        <input id="password" defaultValue="password123" type="password" name="password" />
-
-        <label htmlFor="description">Description:</label>
-        <textarea id="description" name="description" defaultValue="This is a description"></textarea>
-
-        <fieldset>
-          <legend>Employment Status:</legend>
-          <label>
-            <input type="radio" name="employmentStatus" value="unemployed" />
-            Unemployed
-        </label>
-          <label>
-            <input type="radio" name="employmentStatus" value="part-time" />
-            Part-time
-        </label>
-          <label>
-            <input type="radio" name="employmentStatus" defaultChecked={true} value="full-time" />
-            Full-time
-        </label>
-        </fieldset>
-
-        <fieldset>
-          <legend>Dietary restrictions:</legend>
-          <label>
-            <input type="checkbox" name="dietaryRestrictions" value="kosher" />
-            Kosher
-        </label>
-          <label>
-            <input type="checkbox" name="dietaryRestrictions" value="vegan" />
-            Vegan
-        </label>
-          <label>
-            <input type="checkbox" name="dietaryRestrictions" defaultChecked={true} value="gluten-free" />
-            Gluten-free
-        </label>
-        </fieldset>
-
-        <label htmlFor="favColor">What is your favorite color?</label>
-        <select id="favColor" name="favColor" defaultValue="" required>
-          <option value="" disabled>-- Choose a color --</option>
-          <option value="red">Red</option>
-          <option value="orange">Orange</option>
-          <option value="yellow">Yellow</option>
-          <option value="green">Green</option>
-          <option value="blue">Blue</option>
-          <option value="indigo">Indigo</option>
-          <option value="violet">Violet</option>
-        </select>
-
-        <button>Submit</button>
-
-      </form>
-    </section>
-  )
+    const [messages, setMessages] = React.useState(["a"])
+    /**
+     * Challenge:
+     * - If there are no unread messages, display "You're all caught up!"
+     * - If there's exactly 1 unread message, it should read "You have 
+     *   1 unread message" (singular)
+     * - If there are > 1 unread messages, display "You have <n> unread
+     *   messages" (plural)
+     */
+    const msgCnt = messages.length
+    return (
+        <div>
+            {msgCnt === 0 ? <h1>You're all caught up!</h1> : <h1>You have {msgCnt} unread
+     *   {msgCnt === 1 ? "message" : "messages"}</h1>}
+        </div>
+    )
 }
-
-/**
-
-{email: "joe@schmoe.com", password: "password123", description: "This is a description", employmentStatus: "full-time", dietaryRestrictions: "gluten-free", favColor: "orange"}
-
- */
