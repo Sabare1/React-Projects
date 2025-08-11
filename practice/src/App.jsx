@@ -12,7 +12,7 @@ export default function App() {
      *    properties yet)
      */
     const[pads, setPads] = React.useState(padsData);
-    const btnArr = pads.map((pad) => <Pad key={pad.id} color={pad.color}></Pad>)
+    const btnArr = pads.map((pad) => <Pad key={pad.id} color={pad.color} isOn={pad.on}></Pad>)
 
     return (
         <main>
