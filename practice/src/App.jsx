@@ -1,6 +1,7 @@
 import padsData from "./pads"
 import React from "react"
-export default function App(props) {
+import Pad from "./Pad"
+export default function App() {
     /**
      * Challenge part 1:
      * 1. Initialize state with the default value of the
@@ -10,9 +11,8 @@ export default function App(props) {
      *    (Don't worry about using the "on" or "color" 
      *    properties yet)
      */
-    const btnClr = props.darkMode ? "#222222" : "#cccccc";
     const[pads, setPads] = React.useState(padsData);
-    const btnArr = pads.map((pad) => <button style= {{backgroundColor : btnClr}}key={pad.id}></button>)
+    const btnArr = pads.map((pad) => <Pad key={pad.id} color={pad.color}></Pad>)
 
     return (
         <main>
