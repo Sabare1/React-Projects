@@ -2,9 +2,8 @@ import React from "react"
 import Header from "./Header"
 import Body from "./Body"
 
-const [userName, setUserName] = React.useState("Joe")
-
 export default function App() {
+    const [userName, setUserName] = React.useState("Joe")
     return (
         <main>
             <Header name={userName}/>
