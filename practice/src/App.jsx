@@ -12,11 +12,15 @@ export default function App() {
      *    properties yet)
      */
     const[pads, setPads] = React.useState(padsData);
-    function toggleBtn(){
-        console.log("clicked");
+    function toggle(id){
+        setPads((prevPads) =>(
+                prevPads.map((pad) => {
+                return pad.id === id ? {...pad, on: !pad.on} : pad
+            })
+        ))
     }
-    const btnArr = pads.map((pad) => <Pad key={pad.id} color={pad.color} isOn={pad.on} toggle={toggleBtn}></Pad>)
-
+    
+    const btnArr = pads.map((pad) => <Pad id={pad.id} key={pad.id} color={pad.color} isOn={pad.on} toggle={toggle}></Pad>)
     return (
         <main>
             <div className="pad-container">
