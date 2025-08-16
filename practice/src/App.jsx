@@ -1,31 +1,28 @@
-import padsData from "./pads"
 import React from "react"
-import Pad from "./Pad"
+
 export default function App() {
-    /**
-     * Challenge part 1:
-     * 1. Initialize state with the default value of the
-     *    array pulled in from pads.js
-     * 2. Map over that state array and display each one
-     *    as a <button> (CSS is already written for you)
-     *    (Don't worry about using the "on" or "color" 
-     *    properties yet)
-     */
-    const[pads, setPads] = React.useState(padsData);
-    function toggle(id){
-        setPads((prevPads) =>(
-                prevPads.map((pad) => {
-                return pad.id === id ? {...pad, on: !pad.on} : pad
-            })
-        ))
-    }
+    const [starWarsData, setStarWarsData] = React.useState({})
+    const [count, setCount] = React.useState(1)
     
-    const btnArr = pads.map((pad) => <Pad id={pad.id} key={pad.id} color={pad.color} isOn={pad.on} toggle={toggle}></Pad>)
+    /**
+     * Challenge part 2:
+     * Combine the "count" state with the request URL
+     * so that pressing the "Get next character" button
+     * will get a new character from the Star Wars API.
+     * Remember to consider the dependencies array!
+     */
+    
+    React.useEffect(() => {
+        fetch(`/api/people/${count}`)
+            .then(res => res.json())
+            .then(data => setStarWarsData(data))
+    }, [count])
+    
     return (
-        <main>
-            <div className="pad-container">
-                {btnArr}
-            </div>
-        </main>
+        <div>
+            <h2>The count is {count}</h2>
+            <button onClick={() => setCount(prevCount => prevCount + 1)}>Get next character</button>
+            <pre>{JSON.stringify(starWarsData, null, 2)}</pre>
+        </div>
     )
 }
