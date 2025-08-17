@@ -2,10 +2,12 @@ import '../App.css'
 import { useState, useEffect } from 'react'
 export default function Main(){
     const[meme, setMeme] = useState([])
+    const[memeNum, setMemeNum] = useState(0);
+
     useEffect(()=>{
         fetch("https://api.imgflip.com/get_memes").then(res => res.json()).then(res => setMeme(res.data.memes))
     }, [])
-    console.log(meme);
+
     function handleChange(event){
         const {value, name} = event.currentTarget;
         setMeme((prevMeme) => ({
@@ -13,6 +15,12 @@ export default function Main(){
             [name]: value
         }))
     }
+
+    function chooseRandom(){
+        const rand = Math.floor(Math.random()*100);
+        setMemeNum(rand);
+    }
+
     return(
         <main className='main-container'>
             <div className='form-container'>
@@ -36,10 +44,10 @@ export default function Main(){
                         onChange={handleChange}
                     ></input>
                 </label>
-                <button id='get-meme-btn'>Get a new meme image</button>
+                <button id='get-meme-btn' onClick={chooseRandom}>Get a new meme image</button>
             </div>
             <div className='meme'>
-                {meme.length !== 0 && <img src={meme[1].url} alt='generated-meme'></img>}
+                {meme.length !== 0 && <img src={meme[memeNum].url} alt='generated-meme'></img>}
                 <span className='top'>{meme.topText}</span>
                 <span className='bottom'>{meme.bottomText}</span>
             </div>
