@@ -1,12 +1,11 @@
 import '../App.css'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 export default function Main(){
-    const[meme, setMeme] = useState({
-        imgUrl:'http://i.imgflip.com/1bij.jpg',
-        topText: 'one does not simply',
-        bottomText:'walk into mordor'
-    })
-
+    const[meme, setMeme] = useState([])
+    useEffect(()=>{
+        fetch("https://api.imgflip.com/get_memes").then(res => res.json()).then(res => setMeme(res.data.memes))
+    }, [])
+    console.log(meme);
     function handleChange(event){
         const {value, name} = event.currentTarget;
         setMeme((prevMeme) => ({
@@ -40,7 +39,7 @@ export default function Main(){
                 <button id='get-meme-btn'>Get a new meme image</button>
             </div>
             <div className='meme'>
-                <img src={meme.imgUrl} alt='generated-meme'></img>
+                {meme.length !== 0 && <img src={meme[1].url} alt='generated-meme'></img>}
                 <span className='top'>{meme.topText}</span>
                 <span className='bottom'>{meme.bottomText}</span>
             </div>

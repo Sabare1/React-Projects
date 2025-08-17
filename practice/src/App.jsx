@@ -1,28 +1,23 @@
-import React from "react"
+import WindowTracker from "./WindowTracker"
+import React from "react";
 
 export default function App() {
-    const [starWarsData, setStarWarsData] = React.useState({})
-    const [count, setCount] = React.useState(1)
-    
     /**
-     * Challenge part 2:
-     * Combine the "count" state with the request URL
-     * so that pressing the "Get next character" button
-     * will get a new character from the Star Wars API.
-     * Remember to consider the dependencies array!
+     * Challenge:
+     * 1. Create state called `show`, default to `true`
+     * 2. When the button is clicked, toggle `show`
+     * 3. Only display `<WindowTracker>` if `show` is `true`
      */
-    
-    React.useEffect(() => {
-        fetch(`/api/people/${count}`)
-            .then(res => res.json())
-            .then(data => setStarWarsData(data))
-    }, [count])
-    
+    const[show, setShow] = React.useState(true);
+    function toggle(){
+        setShow((prevShow) => !prevShow)
+    }
     return (
-        <div>
-            <h2>The count is {count}</h2>
-            <button onClick={() => setCount(prevCount => prevCount + 1)}>Get next character</button>
-            <pre>{JSON.stringify(starWarsData, null, 2)}</pre>
-        </div>
+        <main className="container">
+            <button onClick={toggle}>
+                Toggle WindowTracker
+            </button>
+            {show && <WindowTracker />}
+        </main>
     )
 }

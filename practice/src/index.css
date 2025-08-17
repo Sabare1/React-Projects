@@ -3,14 +3,24 @@
 }
 
 body {
-    background-color: #171717;
+    background-color: #172554;
     color: white;
-    padding: 10px;
+    margin: 0;
+    padding: 2rem;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
 }
 
 button {
     border: none;
     border-radius: 5px;
-    padding: 10px 30px;
+    padding: 1rem;
+    cursor: pointer;
 }
 
+h1 {
+    text-align: center;
+}
