@@ -4,7 +4,6 @@ export default function OutputScreen(){
     return(
     <>
         <OutputScreenRow/>
-        <OutputScreenRow/>
     </>
     )
 }
