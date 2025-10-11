@@ -19,13 +19,17 @@ h1{
     width: 100%;
     box-sizing: border-box;
     background-color: #bab8b8;
+    font-size: 1rem;
     height: 30px;
+    padding: 5px;
+    text-align: right;
     outline: none;
     border: none;
 }
 .screen-row-output{
     margin-top: -1px;
 }
+
 .btn-container{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
